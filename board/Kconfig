@@ -7,6 +7,13 @@ menu "Device Support"
 		  Say Y if you want to include support for Amazon Echo Show 5
 		  (1st gen)
 
+	config AMAZON_KODIAK
+		bool "Support for Amazon Fire Phone"
+		default n
+		depends on QC32_8974
+		help
+		  Say Y if you want to include support for Amazon Fire Phone
+
 	config AMAZON_PW3
 		bool "Support for Amazon Kindle Paperwhite 3"
 		default n
@@ -14,6 +21,13 @@ menu "Device Support"
 		help
 		  Say Y if you want to include support for Amaozn Kindle
 		  Paperwhite 3
+
+	config AMAZON_SUNSTONE
+		bool "Support for Amazon Fire Max 11"
+		default n
+		depends on MT8188
+		help
+		  Say Y if you want to include support for Amazon Fire Max 11
 
 	config APPLE_N61AP
 		bool "Support for Apple iPhone 6"
@@ -147,6 +161,13 @@ menu "Device Support"
 		help
 		  Say Y if you want to include support for OnePlus 13R
 
+	config ONEPLUS_WAFFLE
+		bool "Support for OnePlus 12"
+		default n
+		depends on SM8650
+		help
+		  Say Y if you want to include support for OnePlus 12
+
 	config QEMU_BOARD_VIRT
 		bool "Support for QEMU virt platform (aarch64)"
 		default n
@@ -162,6 +183,13 @@ menu "Device Support"
 		help
 		  Say Y if you want to include support for Realme C35
 
+	config REALME_RMX5303
+		bool "Support for Realme C71"
+		default n
+		depends on UMS9230
+		help
+		  Say Y if you want to include support for Realme C71
+
 	config SAMSUNG_A10
 		bool "Support for Samsung Galaxy A10"
 		default n
@@ -175,6 +203,20 @@ menu "Device Support"
 		depends on EXYNOS_3830
 		help
 		  Say Y if you want to include support for Samsung Galaxy A12 Nacho
+
+	config SAMSUNG_A13
+		bool "Support for Samsung Galaxy A13"
+		default n
+		depends on EXYNOS_3830
+		help
+		  Say Y if you want to include support for Samsung Galaxy A13
+
+	config SAMSUNG_A14M
+		bool "Support for Samsung Galaxy A14 (MediaTek Version)"
+		default n
+		depends on MT6768
+		help
+		   Say Y if you want to include support for Samsung Galaxy A14
 
 	config SAMSUNG_A21S
 		bool "Support for Samsung Galaxy A21S"
@@ -245,6 +287,13 @@ menu "Device Support"
 		depends on EXYNOS_9610
 		help
 		  Say Y if you want to include support for Samsung Galaxy Tab S6 Lite (2020)
+
+	config SAMSUNG_GTS8WIFI
+		bool "Support for Samsung Galaxy Tab S8 (Wi-Fi)"
+		default n
+		depends on SM8450
+		help
+		  Say Y if you want to include support for Samsung Galaxy Tab S8 (Wi-Fi)
 
 	config SAMSUNG_HEROLTE
 		bool "Support for Samsung Galaxy S7"
@@ -323,13 +372,6 @@ menu "Device Support"
 		help
 		  Say Y if you want to include support for Samsung Galaxy S6
 
-	config SONY_LILAC
-		bool "Support for Sony Xperia XZ1 Compact"
-		default n
-		depends on MSM8998
-		help
-		  Say Y if you want to include support for Sony Xperia XZ1 Compact
-
 	config SONY_PDX245
 		bool "Support for Sony Xperia 1 VI"
 		default n
@@ -358,13 +400,6 @@ menu "Device Support"
 		depends on MT6789
 		help
 		  Say Y if you want to include support for Tecno Pova 6
-
-	config VOLLA_ALGIZ
-		bool "Support for Volla Phone Quintus"
-		default n
-		depends on MT6877
-		help
-		  Say Y if you want to include support for Volla Phone Quintus
 
 	config XIAOMI_BEGONIA
 		bool "Support for Redmi Note 8 Pro"
@@ -438,12 +473,10 @@ menu "Device Specific Addresses"
 		hex "Payload Entry Address"
 		default 0x50000000 if NOTHING_TETRIS
 		default 0x050000000 if SAMSUNG_J4LTE
-		default 0x60000000 if VOLLA_ALGIZ
 		default 0x50000000 if XIAOMI_BEGONIA
 
 	config RAMDISK_ENTRY
 		hex "Ramdisk Entry Address"
 		default 0x40000000 if NOTHING_TETRIS
-		default 0x51100000 if VOLLA_ALGIZ
 		default 0x48000000 if XIAOMI_BEGONIA
 endmenu
